@@ -24,10 +24,10 @@ Route::get('tugas4', function(){
     return view('jquery');
 });
 
-Route::get('ets2021',"Tugas_Controller@showETS");
+Route::get('ets2021',"ViewController@showETS");
 
-Route::get('tugasphp',"Tugas_Controller@tugas_php") ;
-Route::post('tugasphp',"Tugas_Controller@tugas_php") ;
+Route::get('tugasphp',"ViewController@showETS") ;
+Route::post('tugasphp',"ViewController@showETS") ;
 
 //route CRUD
 Route::get('/pegawai','PegawaiController@index');
@@ -59,6 +59,13 @@ Route::post('/tugas/update','TugasController@update');
 
 Route::get('/tugas/hapus/{id}','TugasController@hapus');
 
+//route CRUD absen
+Route::get('/absen','AbsenController@indexabsen');
+Route::get('/absen/add','AbsenController@add');
+Route::post('/absen/store','AbsenController@store');
+Route::get('/absen/edit/{id}','AbsenController@edit');
+Route::post('/absen/update','AbsenController@update');
+Route::get('/absen/hapus/{id}','AbsenController@hapus');
 
 
 ?>

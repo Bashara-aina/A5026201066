@@ -87,6 +87,7 @@
                 </div>
 
                 <div class="links">
+                        <a href="pegawai">Pencatatan data</a>
                     <a href="profile_mahasiswa.html">Tugas 1</a>
                     <a href="portofolio_update\Portofolio\portofolio_update.html">Tugas 2</a>
                     <a href="Tugas_Bootstrap_Fix\index.html">Tugas 3</a>

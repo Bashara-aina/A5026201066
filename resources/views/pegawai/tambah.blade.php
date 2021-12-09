@@ -1,26 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Tutorial Membuat CRUD Pada Laravel - www.malasngoding.com</title>
-</head>
-<body>
+@extends('layout.bahagia')
 
-	<h2><a href="Bashara Aina">www.malasngoding.com</a></h2>
-	<h3>Data Pegawai</h3>
+@section('konten')
 
-	<a href="/pegawai"> Kembali</a>
+	<h3>Tambah Data Pegawai</h3>
 
-	<br/>
-	<br/>
+	<a href="/pegawai"><i class="fas fa-long-arrow-alt-left"></i> Kembali</a>
 
-	<form action="/pegawai/store" method="post">
+    <form id="form" class="need-validation col-10" novalidate action="/pegawai/store" method="post">
 		{{ csrf_field() }}
-		Nama <input type="text" name="nama" required="required"> <br/>
-		Jabatan <input type="text" name="jabatan" required="required"> <br/>
-		Umur <input type="number" name="umur" required="required"> <br/>
-		Alamat <textarea name="alamat" required="required"></textarea> <br/>
-		<input type="submit" value="Simpan Data">
+        <div class="form-group">
+		    Nama
+            <input type="text" name="nama" required="required" class="form-control">
+        </div>
+        <div class="form-group">
+		    Jabatan <input type="text" name="jabatan" required="required" class="form-control">
+        </div>
+        <div class="form-group">
+		Umur <input type="number" name="umur" required="required" class="form-control">
+        </div>
+        <div class="form-group">
+		Alamat <textarea name="alamat" required="required" class="form-control"></textarea>
+        </div>
+		<input type="submit" value="Simpan Data" class="btn btn-primary btn-lg">
 	</form>
-
-</body>
-</html>
+@endsection

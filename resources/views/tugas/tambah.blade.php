@@ -1,26 +1,31 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>TUGAS NRP GENAP</title>
-</head>
-<body>
+@extends('layout.bahagia')
 
-	<h2><a href="">Bashara Aina</a></h2>
-	<h3>Data Pegawai</h3>
+@section('konten')
 
-	<a href="/tugas"> Kembali</a>
+	<h3>Tambah Data Pegawai</h3>
 
-	<br/>
-	<br/>
+	<a href="/tugas"><i class="fas fa-long-arrow-alt-left"></i> Kembali</a>
 
-	<form action="/tugas/store" method="post">
+	<form action="/tugas/store" class="need-validation col-10" method="post">
 		{{ csrf_field() }}
-		IDPegawai <input type="number" name="IDPegawai" required="required"> <br/>
-		Tanggal <input type="datetime-local" name="Tanggal" required="required"> <br/>
-        NamaTugas <input type="text" maxlength="50" name="NamaTugas" required="required"> <br/>
-		Status <input type="text" maxlength="1" name="Status" required="required"> <br/>
-		<input type="submit" value="Simpan Data">
+        <div class="form-group">
+		    IDPegawai <input type="number" name="IDPegawai" class="form-control" required="required">
+        </div>
+        <div class="form-group">
+		    Tanggal <input type="datetime-local" name="Tanggal" class="form-control" required="required">
+        </div>
+        <div class="form-group">
+            NamaTugas <input type="text" maxlength="50" name="NamaTugas" class="form-control" required="required">
+        </div>
+        <div class="form-group">
+		    Status <input type="text" maxlength="1" name="Status" class="form-control" required="required">
+        </div>
+		<input type="submit" value="Simpan Data" class="btn btn-primary btn-lg">
 	</form>
+    <p>
+        Keterangan Status: <br>
+        0 : Belum Selesai <br>
+        1 : Selesai <br>
+    </p>
 
-</body>
-</html>
+@endsection
