@@ -78,6 +78,7 @@ Route::post('/tumbuhan/store','TumbuhanController@store');
 Route::get('/tumbuhan/edit/{id}','TumbuhanController@edit');
 Route::post('/tumbuhan/update','TumbuhanController@update');
 Route::get('/tumbuhan/hapus/{id}','TumbuhanController@hapus');
+Route::get('/tumbuhan/cari','TumbuhanController@cari');
 Route::get('/tumbuhan/view/{id}','TumbuhanController@detail');
 
 
