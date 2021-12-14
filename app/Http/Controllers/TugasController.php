@@ -10,7 +10,7 @@ class TugasController extends Controller
     public function index()
     {
         // mengambil data dari table pegawai
-        $tugas = DB::table('tugas')->get();
+        $tugas = DB::table('tugas')->paginate(5);
 
         // mengirim data pegawai ke view index
         return view('tugas.index',['tugas' => $tugas]);
@@ -24,6 +24,21 @@ class TugasController extends Controller
         return view('tugas.tambah');
 
     }
+
+    public function cari(Request $request)
+	{
+		// menangkap data pencarian
+		$cari = $request->cari;
+
+    		// mengambil data dari table tugas sesuai pencarian data
+		$tugas = DB::table('tugas')
+		->where('IDPegawai','like',"%".$cari."%")
+		->paginate();
+
+    		// mengirim data tugas ke view index
+		return view('tugas.index',['tugas' => $tugas]);
+
+	}
 
     // method untuk insert data ke table pegawai
     public function store(Request $request)
@@ -49,6 +64,16 @@ class TugasController extends Controller
         return view('tugas.edit',['tugas' => $pegawai]);
 
     }
+
+    // method untuk melihat detail data pegawai
+    public function detail($id)
+    {
+    // mengambil data pegawai berdasarkan id yang dipilih
+    $pegawai = DB::table('tugas')->where('ID', $id)->get();
+    // passing data pegawai yang didapat ke view edit.blade.php
+    return view('tugas.detail', ['tugas' => $pegawai]);
+    }
+
 
     // update data pegawai
     public function update(Request $request)

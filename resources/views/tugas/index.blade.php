@@ -9,6 +9,15 @@
 	<br/>
 	<br/>
 
+    <div class="col-10" align="center">
+        <form action="/tugas/cari" method="GET">
+            <input type="text" class="form-control" name="cari" placeholder="Cari Tugas .." value="{{ old('cari') }}">
+            <input type="submit" class="btn btn-default" value="CARI">
+        </form>
+    </div>
+    <br>
+
+
 	<table border="3" class="table table-hover table-active col-10 text-center">
         <thead class="bg-primary">
 		<tr>
@@ -29,6 +38,8 @@
 			<td>{{ $p->NamaTugas }}</td>
             <td>{{ $p->Status }}</td>
 			<td>
+                <a href="/tugas/view/{{ $p->ID }}">View Detail</a>
+				|
 				<a href="/tugas/edit/{{ $p->ID }}">Edit</a>
 				|
 				<a href="/tugas/hapus/{{ $p->ID }}" class="text-danger">Hapus</a>
@@ -42,5 +53,7 @@
         0 : Belum Selesai <br>
         1 : Selesai <br>
     </p>
+
+    <br>
 
 @endsection

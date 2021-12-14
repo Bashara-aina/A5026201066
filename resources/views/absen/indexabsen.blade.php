@@ -10,6 +10,14 @@
 	<br/>
 	<br/>
 
+    <div class="col-10" align="center">
+        <form action="/absen/cari" method="GET">
+            <input type="text" class="form-control" name="cari" placeholder="Cari Absen .." value="{{ old('cari') }}">
+            <input type="submit" class="btn btn-default" value="CARI">
+        </form>
+    </div>
+    <br>
+
 	<table border="3" class="table table-hover table-active col-10 text-center">
         <thead class="bg-primary"
 		<tr>

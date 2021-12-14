@@ -24,21 +24,21 @@ class AbsenController extends Controller
     }
 
     public function cari(Request $request)
-    {
-        // menangkap data pencarian
-        $cari = $request->cari;
+	{
+		// menangkap data pencarian
+		$cari = $request->cari;
 
-            // mengambil data dari table bus sesuai pencarian data
-        $absen = DB::table('absen')
+    		// mengambil data dari table bus sesuai pencarian data
+		$absen = DB::table('absen')
         ->join('pegawai', 'absen.IDPegawai', '=', 'pegawai.pegawai_id')
         ->select('absen.*', 'pegawai.pegawai_nama')
-        ->where('pegawai_nama','like',"%".$cari."%")
-        ->paginate();
+		->where('pegawai_nama','like',"%".$cari."%")
+		->paginate();
 
-            // mengirim data bus ke view index
-        return view('absen.indexabsen',['absen' => $absen],["active" => "absen_aktif"]);
+    		// mengirim data bus ke view index
+		return view('absen.indexabsen',['absen' => $absen],["active" => "absen_aktif"]);
 
-    }
+	}
 
     // method untuk menampilkan view form tambah absen
     public function add()
