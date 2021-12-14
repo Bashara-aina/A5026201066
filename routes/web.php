@@ -42,6 +42,9 @@ Route::post('/pegawai/update','PegawaiController@update');
 
 Route::get('/pegawai/hapus/{id}','PegawaiController@hapus');
 
+Route::get('/pegawai/cari','PegawaiController@cari');
+
+Route::get('/pegawai/view/{id}','PegawaiController@detail');
 
 // UDAH KE BAGIAN TUGAS PEGAWAI
 
@@ -66,6 +69,16 @@ Route::post('/absen/store','AbsenController@store');
 Route::get('/absen/edit/{id}','AbsenController@edit');
 Route::post('/absen/update','AbsenController@update');
 Route::get('/absen/hapus/{id}','AbsenController@hapus');
+Route::get('/absen/view/{id}','AbsenController@detail');
+
+// route CRUD tumbuhan
+Route::get('/tumbuhan','TumbuhanController@index');
+Route::get('/tumbuhan/tambah','TumbuhanController@tambah');
+Route::post('/tumbuhan/store','TumbuhanController@store');
+Route::get('/tumbuhan/edit/{id}','TumbuhanController@edit');
+Route::post('/tumbuhan/update','TumbuhanController@update');
+Route::get('/tumbuhan/hapus/{id}','TumbuhanController@hapus');
+Route::get('/tumbuhan/view/{id}','TumbuhanController@detail');
 
 
 ?>

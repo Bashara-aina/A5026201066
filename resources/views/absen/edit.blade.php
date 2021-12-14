@@ -1,4 +1,3 @@
-
    @extends('layout.bahagia')
 
    @section('title', 'Mengedit Data Absensi')
@@ -6,13 +5,12 @@
 
    @section('konten')
 
-<h3>{{ $judul }}</h3>
 	@foreach($absen as $a)
     <div class="form-group">
 	<form action="/absen/update" class="need-validation col-10" method="post">
 		{{ csrf_field() }}
 		<input type="hidden" name="id" value="{{ $a->ID }}">
-        IDPegawai <select name="idpegawai"  class="form-control" >
+        <strong> IDPegawai</strong>  <select name="idpegawai"  class="form-control form-group" >
             @foreach($pegawai as $p)
              <option value="{{ $p->pegawai_id }}" @if ($p->pegawai_id === $a->IDPegawai ) selected="selected" @endif>{{ $p->pegawai_nama }}</option>
             @endforeach
@@ -44,7 +42,9 @@
                 <input type="radio" id="css" name="status" value="S"  @if ($a->Status === "S" ) checked="checked" @endif>
                 <label for="css">Sakit</label><br>
                 <input type="radio" id="javascript" name="status" value="A"  @if ($a->Status === "A" ) checked="checked" @endif>
-                <label for="javascript">Alpha</label>
+                <label for="javascript">Alpha</label> <br>
+                <input type="radio" id="javascript" name="status" value="A"  @if ($a->Status === "H" ) checked="checked" @endif>
+                <label for="javascript">Hadir</label>
                 <p><input type="submit" value="Simpan Data" class="btn btn-primary btn-lg"></p>
 	</form>
 	@endforeach

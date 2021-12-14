@@ -103,7 +103,7 @@
     background-color: #ffa500;
     }
 
-    input, textarea {
+    input, textarea, .form-group {
         font-size: 20px !important;
     }
 
@@ -145,7 +145,7 @@
     <a href="/absen"><i class="far fa-clipboard"></i>Absen</a>
     <a href="/tugas"><i class="fas fa-tasks"></i>Tugas</a>
     <a href="#">soon!</a>
-    <a href="#">Praktikum</a>
+    <a href="/tumbuhan">Praktikum</a>
   </div>
 
   <!-- Page content -->

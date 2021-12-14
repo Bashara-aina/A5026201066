@@ -11,18 +11,42 @@ class AbsenController extends Controller
     public function indexabsen()
     {
         // mengambil data dari table absen
-        $absen = DB::table('absen')->get();
+        // $absen = DB::table('absen')->get();
+
+        // join table absen ==> table pegawai
+        $absen = DB::table('absen')
+            ->join('pegawai', 'absen.IDPegawai', '=', 'pegawai.pegawai_id')
+            ->select('absen.*', 'pegawai.pegawai_nama')
+            ->paginate(5);
 
         // mengirim data absen ke view indexabsen
-        return view('absen.indexabsen', ['absen' => $absen]);
+        return view('absen.indexabsen', ['absen' => $absen], ["active" => "absen_aktif"]);
     }
+
+    public function cari(Request $request)
+    {
+        // menangkap data pencarian
+        $cari = $request->cari;
+
+            // mengambil data dari table bus sesuai pencarian data
+        $absen = DB::table('absen')
+        ->join('pegawai', 'absen.IDPegawai', '=', 'pegawai.pegawai_id')
+        ->select('absen.*', 'pegawai.pegawai_nama')
+        ->where('pegawai_nama','like',"%".$cari."%")
+        ->paginate();
+
+            // mengirim data bus ke view index
+        return view('absen.indexabsen',['absen' => $absen],["active" => "absen_aktif"]);
+
+    }
+
     // method untuk menampilkan view form tambah absen
     public function add()
     {
         // mengambil data dari table pegawai
         $pegawai = DB::table('pegawai')->orderBy('pegawai_nama', 'asc')->get(); //defaultnya urut Primary Key
         // memanggil view add
-        return view('absen.add', ['pegawai' => $pegawai]);
+        return view('absen.add', ['pegawai' => $pegawai], ["active" => "absen_aktif"]);
     }
     // method untuk insert data ke table absen
     public function store(Request $request)
@@ -46,11 +70,24 @@ class AbsenController extends Controller
         // mengambil data dari table pegawai
         $pegawai = DB::table('pegawai')->orderBy('pegawai_nama', 'asc')->get(); //defaultnya urut Primary Key
 
-        $judul = "Pencatatan data" ;
-
         // passing data absen yang didapat ke view update.blade.php
-        return view('absen.edit', ['absen' => $absen,'pegawai' => $pegawai , 'judul' => $judul]);
+        return view('absen.edit', ['absen' => $absen, 'pegawai' => $pegawai], ["active" => "absen_aktif"]);
     }
+
+    //method untuk detail data absen
+    public function detail($id)
+    {
+        // mengambil data bus berdasarkan id yang dipilih
+        $absen = DB::table('absen')
+        ->join('pegawai', 'absen.IDPegawai', '=', 'pegawai.pegawai_id')
+        ->select('absen.*', 'pegawai.pegawai_nama')
+        ->where('ID',$id)
+        ->get();
+
+        // passing data bus yang didapat ke view edit.blade.php
+        return view('absen.detail', ['absen' => $absen], ["active" => "absen_aktif"]);
+    }
+
     // update data absen
     public function update(Request $request)
     {

@@ -26,6 +26,8 @@
 			<td>{{ $a->Tanggal }}</td>
 			<td>{{ $a->Status }}</td>
 			<td>
+                <a href="/absen/view/{{ $a->ID }}">View Detail</a>
+				|
 				<a href="/absen/edit/{{ $a->ID }}">Edit Absensi</a>
 				|
 				<a href="/absen/hapus/{{ $a->ID }}" class="text-danger">Delete Absensi</a>
@@ -39,6 +41,12 @@
         I : Izin <br>
         S : Sakit <br>
         A : Alpha <br>
+        H : Hadir
         </p>
+
+    <div class="container d-flex mx-auto">
+        {{ $absen->links() }}
+        </div>
+        <br>
 
 @endsection

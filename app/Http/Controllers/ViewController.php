@@ -26,6 +26,6 @@ class ViewController extends Controller
 
     function showETS()
     {
-        return view('ets');
+        return view('ets2021');
     }
 }
