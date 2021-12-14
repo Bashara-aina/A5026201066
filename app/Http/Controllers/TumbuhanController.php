@@ -26,7 +26,7 @@ class TumbuhanController extends Controller
     		// mengambil data dari table tumbuhan sesuai pencarian data
 		$tumbuhan = DB::table('tumbuhan')
 		->where('namatumbuhan','like',"%".$cari."%")
-		->paginate();
+		->paginate(5);
 
     		// mengirim data tumbuhan ke view index
 		return view('tumbuhan.index',['tumbuhan' => $tumbuhan],["active" => "tumbuhan_aktif"]);
