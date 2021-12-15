@@ -5,7 +5,7 @@
 
 <h3>Edit Data Nilai</h3>
 
-<a href="/nilaiangka"><i class="fas fa-long-arrow-alt-left"></i> Kembali</a>
+<a href="/NilaiAngka"><i class="fas fa-long-arrow-alt-left"></i> Kembali</a>
 
     <div class="container">
         @foreach($nilaikuliah as $n)
@@ -21,8 +21,8 @@
                 <input type="number" class="form-control" name="SKS" id="SKS" placeholder="Jumlah SKS" required="required" value="{{ $n->SKS }}">
             </div>
             <div class="form-group">
-                <label for="nilaiangka">Nilai Angka</label>
-                <input type="number" class="form-control" name="nilaiangka" id="nilaiangka" placeholder="Nilai Angka" required="required" value="{{ $n->nilaiangka }}">
+                <label for="NilaiAngka">Nilai Angka</label>
+                <input type="number" class="form-control" name="NilaiAngka" id="NilaiAngka" placeholder="Nilai Angka" required="required" value="{{ $n->NilaiAngka }}">
             </div>
             <br>
             <input type="submit" value="Simpan Data" class="btn btn-primary btn-lg">
