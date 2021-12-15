@@ -25,7 +25,7 @@
             <tr>
                 <th>ID</th>
                 <th>NRP</th>
-                <th>nilaiangka</th>
+                <th>NilaiAngka</th>
                 <th>SKS</th>
                 <th>Nilai Huruf</th>
                 <th>Bobot</th>
@@ -37,15 +37,15 @@
                 <tr>
                     <td>{{ $n->ID }}</td>
                     <td>{{ $n->NRP }}</td>
-                    <td>{{ $n->nilaiangka }}</td>
+                    <td>{{ $n->NilaiAngka }}</td>
                     <td>{{ $n->SKS }}</td>
                     <td>
                     <?php
-                    if($n->nilaiangka <=40){
+                    if($n->NilaiAngka <=40){
                         echo "D";
-                    } elseif ($n->nilaiangka >=41 && $n->nilaiangka <=60) {
+                    } elseif ($n->NilaiAngka >=41 && $n->NilaiAngka <=60) {
                         echo "C";
-                    } elseif ($n->nilaiangka >=61 && $n->nilaiangka <=80) {
+                    } elseif ($n->NilaiAngka >=61 && $n->NilaiAngka <=80) {
                         echo "B";
                     } else{
                         echo "A";
@@ -53,7 +53,7 @@
                     ?> </td>
                     <td>
                         <?php
-                        $bobot = $n->nilaiangka * $n->SKS;
+                        $bobot = $n->NilaiAngka * $n->SKS;
                         echo $bobot;
                         ?></td>
                     <td>

@@ -16,7 +16,7 @@
         </div>
         Nilai Angka
         <div class="form-group form-control">
-		{{ $n->nilaiangka }}
+		{{ $n->NilaiAngka }}
         </div>
         SKS
         <div class="form-group form-control">

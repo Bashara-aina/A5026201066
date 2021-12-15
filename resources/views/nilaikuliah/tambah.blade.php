@@ -12,8 +12,8 @@
           <input type="text" class="form-control" name="NRP" id="NRP" placeholder="NRP" required="required" maxlength="6">
         </div>
         <div class="form-group">
-            <label for="nilaiangka">Nilai Angka</label>
-            <input type="number" class="form-control" name="nilaiangka" id="nilaiangka" placeholder="nilang angka kuliah" required="required">
+            <label for="NilaiAngka">Nilai Angka</label>
+            <input type="number" class="form-control" name="NilaiAngka" id="NilaiAngka" placeholder="nilang angka kuliah" required="required">
         </div>
 
         <div class="form-group">
