@@ -5,7 +5,7 @@
 
 <h3>Edit Data Nilai</h3>
 
-<a href="/NilaiAngka"><i class="fas fa-long-arrow-alt-left"></i> Kembali</a>
+<a href="/nilaikuliah"><i class="fas fa-long-arrow-alt-left"></i> Kembali</a>
 
     <div class="container">
         @foreach($nilaikuliah as $n)
