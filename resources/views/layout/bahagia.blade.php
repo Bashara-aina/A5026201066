@@ -144,7 +144,7 @@
     <a href="/pegawai"><i class="fas fa-user-tie"></i>Pegawai</a>
     <a href="/absen"><i class="far fa-clipboard"></i>Absen</a>
     <a href="/tugas"><i class="fas fa-tasks"></i>Tugas</a>
-    <a href="#">soon!</a>
+    <a href="/nilaikuliah">EAS</a>
     <a href="/tumbuhan">Praktikum</a>
   </div>
 
