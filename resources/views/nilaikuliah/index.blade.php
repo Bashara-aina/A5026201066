@@ -71,9 +71,11 @@
               {{ $nilaikuliah->links() }}
 
           <p class="pt-1">
-            Keterangan Tersedia: <br>
-            Y : Ya <br>
-            T : Tidak <br>
+            Konversi Nilai: <br>
+            D : <= 40 <br>
+            C : 41 <= NA <= 60 <br>
+            B : 61 <= NA <= 80 <br>
+            A : >= 81 <br>
             </p>
             <br>
 @endsection
